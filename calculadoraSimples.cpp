@@ -15,8 +15,9 @@ printf("===============================\n");
 printf("Selecione uma operacao:\n");
 printf("1. Adicao\n2. Subtracao\n3. Multiplicacao\n4. Divisao\n5. Sair\nOpcao:");
 scanf("%d", &opcao);
-if(opcao > 5){
+if(opcao > 5 || opcao < 1){
     printf("opcao não disponível. Digite uma opção valida.\n");
+    continue;
 }
 if(opcao == 1){
     printf("Digite o primeiro numero: \n");
@@ -56,7 +57,7 @@ if(opcao == 5){
 }
 printf("Deseja realizar outra operacao? (s/n):\n");
 scanf(" %c", &sn);
-if(sn != 's' || sn != 'S' || sn != 'n' || sn != 'N'){
+while(sn != 's' && sn != 'S' && sn != 'n' && sn != 'N'){
     printf("Resposta inválida. Por favor, digite 's' para sim ou 'n' para não.");
 scanf(" %c", &sn);
 }
